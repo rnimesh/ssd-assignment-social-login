@@ -159,7 +159,7 @@ span.psw {
 	}
 	
 	function testAPI(){
-		FB.api('/me?fields=name,email,picture.width(200).height(200),location',function(response){
+		FB.api('/me?fields=name,email,picture.width(200).height(200)',function(response){
 			if(response && !response.error){
 				console.log(response);
 				buildProfile(response);
@@ -175,7 +175,7 @@ span.psw {
 			<div>
 				<h4 id="welcome">WELCOME</h4>
 				<h2 id="welcome2"><b>${user.name}</b></h2>
-				<h6 id="cty"><b>${user.location.name}</b></h6><br/>
+				
 				
 			</div>
 		`;
@@ -250,7 +250,7 @@ span.psw {
 			<fb:login-button
 				id="fb-btn"
 				size="xlarge"
-				scope="public_profile,email,user_location"
+				scope="public_profile,email"
 				onlogin="checkLoginState();">
 			</fb:login-button>
 		</div>
